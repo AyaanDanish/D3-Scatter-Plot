@@ -109,7 +109,9 @@ fetchData().then((dataset) => {
       tooltip
         .style("opacity", 0.75)
         .html(
-          `${d.Name}: ${d.Nationality}<br>Year: ${d.Year}, Time: ${d.Time}<br><br>${d.Doping}`
+          d.Doping
+            ? `${d.Name}: ${d.Nationality}<br>Year: ${d.Year}, Time: ${d.Time} <br><br>${d.Doping}`
+            : `${d.Name}: ${d.Nationality}<br>Year: ${d.Year}, Time: ${d.Time}`
         )
         .style("left", e.pageX + 15 + "px")
         .style("top", e.pageY - 100 + "px");
